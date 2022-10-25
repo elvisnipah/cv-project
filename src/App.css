@@ -23,6 +23,27 @@
   font-size: 24px;
 }
 
+.cv--display > div > p {
+  color: white;
+  font-size: 18px;
+}
+
+.heading {
+  color: #07E1FF;
+  font-size: 24px;
+}
+
 input {
   margin-bottom: 10px;
+}
+
+.save-button {
+  margin-top: 30px;
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: #07E1FF;
+  font-weight: bold;
+  color: #474747;
 }

@@ -3,6 +3,7 @@ import React from 'react'
 function Education(props) {
   
   const education = props.education
+
   function handleChange(event) {
     props.setEducation(prevEducation=> {
       return {
