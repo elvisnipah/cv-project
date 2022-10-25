@@ -4,6 +4,7 @@ import Education from './components/Education';
 import Personal from './components/Personal';
 import Work from './components/Work';
 import Save from './components/Save';
+import Edit from './components/Edit';
 
 function App() {
   const [cv, setCv] = useState({})
@@ -56,20 +57,20 @@ function App() {
     return (
       <div className='cv--display'>
         <div className="cv--display--personal">
-          <p className="heading">PERSONAL DETAILS</p>
+          <p className="sub_heading">PERSONAL DETAILS</p>
           <p>Name: {cv.firstName} {cv.lastName} </p>
           <p>Email: {cv.email}</p>
           <p>Phone: {cv.phone}</p>
         </div>
         <div className="cv--display--school">
-          <p>EDUCATION</p>
+          <p className="sub_heading">EDUCATION</p>
           <p>School: {cv.school}</p>
           <p>Start: {cv.schoolStart}</p>
           <p>End: {cv.schoolEnd}</p>
           <p>Course: {cv.course}</p>
         </div>
         <div className="cv--display--company">
-          <p>WORK EXPERIENCE</p>
+          <p className='sub_heading'>WORK EXPERIENCE</p>
           <p>Company Name: {cv.companyName}</p>
           <p>Start: {cv.companyStart}</p>
           <p>End: {cv.companyEnd}</p>
@@ -79,9 +80,15 @@ function App() {
     )
   }
 
+  function showCV() {
+    setSaveStatus(false)
+  }
+
   return (
     <div className="App">
-      {saveStatus ? <DisplayCV /> : 
+      {saveStatus ? <>
+          <DisplayCV /> <Edit showCV={showCV}/>
+        </>: 
         <div>
           <Personal
           personalInfo={personalInfo}
